@@ -1,5 +1,5 @@
 // App.js
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./Components/Header.jsx";
 import Footer from "./Components/Footer.jsx";
 
@@ -14,21 +14,18 @@ import Contact from "./Pages/Contact.jsx";
 function App() {
   return (
     <Router>
-      {/* Header should be visible on all pages */}
       <Header />
 
-      {/* All routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/services" element={<Services />} />
         <Route path="/about" element={<About />} />
         <Route path="/solutions" element={<Solutions />} />
-        <Route path="/SuccessStories" element={<SuccessStories />} />
-        <Route path="/TechnologyStack" element={<TechnologyStack />} />
-        <Route path="/Contact" element={<Contact />} />
+        <Route path="/success-stories" element={<SuccessStories />} />
+        <Route path="/technology-stack" element={<TechnologyStack />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
 
-      {/* Footer visible on all pages */}
       <Footer />
     </Router>
   );
