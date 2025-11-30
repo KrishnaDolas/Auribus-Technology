@@ -303,7 +303,7 @@ export default function Home() {
             </div>
           </section>
 
-          {/* Services */}
+          {/* Services
           <section id="services" className="mt-16 md:mt-20">
             <div className="flex items-center justify-between mb-6">
               <div>
@@ -348,7 +348,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          </section>
+          </section> */}
 
           {/* Why partner + accordion */}
           <section
