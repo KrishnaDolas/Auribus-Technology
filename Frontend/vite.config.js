@@ -22,5 +22,5 @@ export default defineConfig({
       },
       plugins: [],
     }),
-  ],
+  ],base: "/Auribus-Technology/",
 })
