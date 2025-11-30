@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+/* Simple marquee animation for logo rows */
+@keyframes logos-marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Move left by half because we duplicated the content */
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-row {
+  display: inline-flex;
+  animation: logos-marquee 25s linear infinite;
+}
+
+.marquee-row-reverse {
+  display: inline-flex;
+  animation: logos-marquee 25s linear infinite reverse;
+}
