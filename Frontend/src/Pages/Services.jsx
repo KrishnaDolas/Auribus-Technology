@@ -455,6 +455,58 @@ export default function Services() {
           ))}
         </section>
 
+        <section className="mt-10 grid md:grid-cols-3 gap-5">
+  {/* DevOps */}
+  <div className="rounded-3xl border border-slate-800 bg-slate-950/85 p-5 sm:p-6">
+    <p className="text-[11px] uppercase tracking-[0.18em] text-slate-400 mb-1">
+      DevOps & Cloud
+    </p>
+    <h3 className="text-sm sm:text-base font-semibold mb-2">
+      DevOps Engineering & SRE
+    </h3>
+    <ul className="text-xs sm:text-sm text-slate-200 space-y-1.5">
+      <li>• CI/CD pipelines & release automation.</li>
+      <li>• Kubernetes, containers & microservices.</li>
+      <li>• Infrastructure as Code on Azure / AWS / GCP.</li>
+      <li>• Security, compliance & observability.</li>
+    </ul>
+  </div>
+
+  {/* Web development */}
+  <div className="rounded-3xl border border-slate-800 bg-slate-950/85 p-5 sm:p-6">
+    <p className="text-[11px] uppercase tracking-[0.18em] text-slate-400 mb-1">
+      Web development
+    </p>
+    <h3 className="text-sm sm:text-base font-semibold mb-2">
+      Modern Web & Mobile Apps
+    </h3>
+    <ul className="text-xs sm:text-sm text-slate-200 space-y-1.5">
+      <li>• MERN Stack applications (MongoDB, Express, React, Node).</li>
+      <li>• React Native apps for iOS & Android.</li>
+      <li>• WordPress corporate & marketing websites.</li>
+      <li>• API‑first architectures with secure integrations.</li>
+    </ul>
+  </div>
+
+  {/* UI/UX & Video / Branding */}
+  <div className="rounded-3xl border border-slate-800 bg-slate-950/85 p-5 sm:p-6">
+    <p className="text-[11px] uppercase tracking-[0.18em] text-slate-400 mb-1">
+      UI/UX & Creative
+    </p>
+    <h3 className="text-sm sm:text-base font-semibold mb-2">
+      Branding, UI/UX & Video Design
+    </h3>
+    <ul className="text-xs sm:text-sm text-slate-200 space-y-1.5">
+      <li>• Logo & brand identity systems.</li>
+      <li>• Marketing kits (brochures, banners, digital ads).</li>
+      <li>• Product packaging & visual systems.</li>
+      <li>• Top‑tier UI/UX for web & mobile.</li>
+      <li>• Creative motion graphics & video design.</li>
+    </ul>
+  </div>
+</section>
+
+
         {/* DevOps capabilities */}
         <section id="capabilities" className="mt-14 md:mt-18 space-y-8">
           <div className="mb-2">

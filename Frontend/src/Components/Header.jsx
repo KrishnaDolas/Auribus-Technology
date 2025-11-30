@@ -46,13 +46,13 @@ export default function Header() {
                 Services
               </NavLink>
               <NavLink
-                to="/SuccessStories"
+                to="/success-stories"
                 className={({ isActive }) => (isActive ? active : base)}
               >
                 Success Stories
               </NavLink>
               <NavLink
-                to="/TechnologyStack"
+                to="/technology-stack"
                 className={({ isActive }) => (isActive ? active : base)}
               >
                 Technology Stack
