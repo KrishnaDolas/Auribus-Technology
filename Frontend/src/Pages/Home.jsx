@@ -249,8 +249,20 @@ export default function Home() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 text-xs text-slate-100">
-                <span>📧 contact@auribus-it.com</span>
-                <span>📱 +91-XXXXXXXXXX</span>
+                <a
+                  href="mailto:support@auribustech.com"
+                  className="hover:text-blue-600 transition"
+                >
+                  📧 support@auribustech.com
+                </a>
+
+                <a
+                  href="tel:+918149524655"
+                  className="hover:text-blue-600 transition"
+                >
+                  📱 +91-8149524655
+                </a>
+
                 <a
                   href="https://www.linkedin.com/in/auribus-solutions-673657268"
                   target="_blank"
@@ -265,33 +277,33 @@ export default function Home() {
 
           {/* NEW DevOps accelerator value snapshot USING YOUR SERVICE LIST */}
           <section className="w-full flex justify-center mt-20 px-4">
-  <div
-    className="max-w-5xl w-full rounded-[40px] p-10 text-center border-[3px]"
-    style={{
-      borderImage:
-        "linear-gradient(90deg, #2dd4bf, #3b82f6, #6366f1) 1",
-    }}
-  >
-    <p className="text-xl md:text-2xl font-medium text-slate-200 leading-relaxed">
-      Put our full stack development experience of solving the challenges of
-      <br />
-      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 font-semibold">
-        FinTech, eCommerce, Healthcare, Aviation,
-      </span>{" "}
-      and 20+ other industries to your benefit
-    </p>
+            <div
+              className="max-w-5xl w-full rounded-[40px] p-10 text-center border-[3px]"
+              style={{
+                borderImage:
+                  "linear-gradient(90deg, #2dd4bf, #3b82f6, #6366f1) 1",
+              }}
+            >
+              <p className="text-xl md:text-2xl font-medium text-slate-200 leading-relaxed">
+                Put our full stack development experience of solving the
+                challenges of
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 font-semibold">
+                  FinTech, eCommerce, Healthcare, Aviation,
+                </span>{" "}
+                and 20+ other industries to your benefit
+              </p>
 
-    <div className="mt-6">
-      <button
-        className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 transition text-white font-medium flex items-center mx-auto gap-2"
-      >
-        Talk to Our Experts
-        <span>→</span>
-      </button>
-    </div>
-  </div>
-</section>
-
+              <div className="mt-6">
+                <Link to="/contact">
+                  <button className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 transition text-white font-medium flex items-center mx-auto gap-2">
+                    Talk to Our Experts
+                    <span>→</span>
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </section>
         </main>
       </div>
     </div>

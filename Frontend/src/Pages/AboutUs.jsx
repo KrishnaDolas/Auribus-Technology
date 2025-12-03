@@ -55,7 +55,7 @@ export default function AboutUs() {
                 <span>✓</span> MERN, React Native & WordPress expertise
               </li>
               <li className="flex gap-2">
-                <span>✓</span> 120+ full-stack projects delivered
+                <span>✓</span> 50+ full-stack projects delivered
               </li>
               <li className="flex gap-2">
                 <span>✓</span> End-to-end from design to DevOps & deployment
@@ -127,7 +127,7 @@ export default function AboutUs() {
                 WordPress, Kubernetes, DevOps automation.
               </p>
               <p>
-                • <strong>Proven delivery:</strong> 7+ years, 120+ projects,
+                • <strong>Proven delivery:</strong> 5+ years, 50+ projects,
                 trusted by enterprises and startups.
               </p>
               <p>
@@ -198,7 +198,7 @@ export default function AboutUs() {
               href="mailto:contact@auribus-it.com"
               className="inline-flex items-center gap-1 text-sky-300 hover:text-sky-200"
             >
-              📧 contact@auribus-it.com
+              📧 support@auribustech.com
             </a>
             <span>•</span>
             <a

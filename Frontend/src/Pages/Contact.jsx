@@ -1,7 +1,36 @@
 // src/Contact.jsx
-import React from "react";
+import React, { useState } from "react";
 
 export default function Contact() {
+  const [btnText, setBtnText] = useState("Submit request");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault(); // ⛔ stop default redirect
+
+    setIsSubmitting(true);
+    setBtnText("Submitting...");
+
+    const form = e.target;
+
+    // Send manually to FormSubmit
+    fetch("https://formsubmit.co/sachinbhailume05@gmail.com", {
+      method: "POST",
+      body: new FormData(form),
+    })
+      .then(() => {
+        setBtnText(
+          "Done! Your form has been submitted. We'll reach you shortly."
+        );
+      })
+      .catch(() => {
+        setBtnText("Error! Try Again");
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-50">
       {/* Background glow */}
@@ -18,7 +47,7 @@ export default function Contact() {
             Contact Auribus Tech
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-3">
-            Let&apos;s talk {" "}
+            Let&apos;s talk{" "}
             <span className="bg-gradient-to-r from-sky-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent">
               about your
             </span>{" "}
@@ -33,23 +62,37 @@ export default function Contact() {
             <p className="text-[11px] uppercase tracking-[0.18em] text-slate-400 mb-3">
               Share your details
             </p>
-            <form className="space-y-4 text-xs sm:text-sm">
+
+            {/* ⭐⭐⭐ CUSTOM FORM WITH BUTTON TEXT CHANGES ⭐⭐⭐ */}
+            <form
+              onSubmit={handleSubmit}
+              className="space-y-4 text-xs sm:text-sm"
+            >
+              {/* Hidden fields to keep FormSubmit formatting */}
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Contact Form Submission from Auribus Website"
+              />
+
               <div className="grid sm:grid-cols-2 gap-3">
                 <div className="flex flex-col gap-1">
-                  <label className="text-[11px] text-slate-300">
-                    Full name
-                  </label>
+                  <label className="text-[11px] text-slate-300">Full name</label>
                   <input
+                    name="fullname"
                     type="text"
+                    required
                     className="rounded-lg bg-slate-900 border border-slate-700 px-2.5 py-2 text-xs sm:text-sm text-slate-100 outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
                     placeholder="Your name"
                   />
                 </div>
+
                 <div className="flex flex-col gap-1">
-                  <label className="text-[11px] text-slate-300">
-                    Company
-                  </label>
+                  <label className="text-[11px] text-slate-300">Company</label>
                   <input
+                    name="company"
                     type="text"
                     className="rounded-lg bg-slate-900 border border-slate-700 px-2.5 py-2 text-xs sm:text-sm text-slate-100 outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
                     placeholder="Organization name"
@@ -59,21 +102,24 @@ export default function Contact() {
 
               <div className="grid sm:grid-cols-2 gap-3">
                 <div className="flex flex-col gap-1">
-                  <label className="text-[11px] text-slate-300">
-                    Work email
-                  </label>
+                  <label className="text-[11px] text-slate-300">Work email</label>
                   <input
+                    name="email"
                     type="email"
+                    required
                     className="rounded-lg bg-slate-900 border border-slate-700 px-2.5 py-2 text-xs sm:text-sm text-slate-100 outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
                     placeholder="you@company.com"
                   />
                 </div>
+
                 <div className="flex flex-col gap-1">
                   <label className="text-[11px] text-slate-300">
                     Phone (with country code)
                   </label>
                   <input
+                    name="phone"
                     type="tel"
+                    required
                     className="rounded-lg bg-slate-900 border border-slate-700 px-2.5 py-2 text-xs sm:text-sm text-slate-100 outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
                     placeholder="+91-XXXXXXXXXX"
                   />
@@ -84,52 +130,29 @@ export default function Contact() {
                 <label className="text-[11px] text-slate-300">
                   What do you need help with?
                 </label>
-                <select className="rounded-lg bg-slate-900 border border-slate-700 px-2.5 py-2 text-xs sm:text-sm text-slate-100 outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400">
-  <option value="">Select a service</option>
-
-  {/* DevOps & Cloud */}
-  <option>DevOps & Cloud Infrastructure</option>
-  <option>CI/CD & Release Automation</option>
-  <option>Cloud Migration & Infrastructure as Code</option>
-  <option>Kubernetes & Microservices</option>
-  <option>Monitoring & Observability</option>
-  <option>Security & Compliance Automation</option>
-  <option>DevOps Transformation & Training</option>
-
-  {/* Web & Mobile */}
-  <option>MERN Stack Web Applications</option>
-  <option>React Native Mobile Apps</option>
-  <option>REST APIs & Microservices Backend</option>
-  <option>Real-time Dashboards & SaaS Platforms</option>
-
-  {/* WordPress & Web */}
-  <option>WordPress Websites & CMS</option>
-  <option>WordPress E-commerce (WooCommerce)</option>
-  <option>Performance Optimization & CDN</option>
-  <option>SEO & Mobile-first Web Design</option>
-
-  {/* AI & Content */}
-  <option>AI Video & Content Creation</option>
-  <option>Social Media Content & Shorts</option>
-  <option>Brand Storytelling & Explainer Videos</option>
-
-  {/* Marketing */}
-  <option>Digital Marketing & Growth</option>
-  <option>Google Ads & Meta Ads Campaigns</option>
-  <option>SEO & Content Marketing</option>
-  <option>Lead Generation & Sales Funnels</option>
-
-  {/* ERP & Automation */}
-  <option>ERP & Business Process Automation</option>
-  <option>HRMS, CRM & Inventory Systems</option>
-  <option>Finance, Accounting & Reporting Workflows</option>
-
-  {/* General */}
-  <option>Consulting & Architecture Review</option>
-  <option>Managed Services & Support</option>
-  <option>Other / Not sure yet</option>
-</select>
-
+                <select
+                  name="service"
+                  required
+                  className="rounded-lg bg-slate-900 border border-slate-700 px-2.5 py-2 text-xs sm:text-sm text-slate-100 outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
+                >
+                  <option value="">Select a service</option>
+                  <option>DevOps & Cloud Infrastructure</option>
+                  <option>CI/CD & Release Automation</option>
+                  <option>Cloud Migration & Infrastructure as Code</option>
+                  <option>Kubernetes & Microservices</option>
+                  <option>Monitoring & Observability</option>
+                  <option>Security & Compliance Automation</option>
+                  <option>MERN Stack Web Applications</option>
+                  <option>React Native Mobile Apps</option>
+                  <option>REST APIs & Microservices Backend</option>
+                  <option>WordPress Websites & CMS</option>
+                  <option>SEO & Mobile-first Web Design</option>
+                  <option>Digital Marketing & Growth</option>
+                  <option>Google Ads & Meta Ads</option>
+                  <option>Lead Generation & Funnels</option>
+                  <option>ERP & Business Automation</option>
+                  <option>Consulting / Not sure yet</option>
+                </select>
               </div>
 
               <div className="flex flex-col gap-1">
@@ -137,39 +160,43 @@ export default function Contact() {
                   Briefly describe your current challenges
                 </label>
                 <textarea
+                  name="message"
+                  required
                   rows={4}
                   className="rounded-lg bg-slate-900 border border-slate-700 px-2.5 py-2 text-xs sm:text-sm text-slate-100 outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 resize-none"
-                  placeholder="e.g., long release cycles, frequent deployment failures, high cloud costs, audit pressure..."
+                  placeholder="Describe your needs..."
                 />
               </div>
 
               <div className="flex items-start gap-2">
                 <input
+                  name="consent"
                   id="consent"
                   type="checkbox"
-                  className="mt-0.5 h-3.5 w-3.5 rounded border-slate-700 bg-slate-900 text-sky-500 focus:ring-sky-500"
+                  required
+                  className="mt-0.5 h-3.5 w-3.5 rounded border-slate-700 bg-slate-900 text-sky-500"
                 />
                 <label
                   htmlFor="consent"
                   className="text-[11px] text-slate-300 leading-snug"
                 >
-                  I agree to be contacted by Auribus Tech about DevOps & Cloud
-                  consulting services. My details will be used only for this
-                  purpose.
+                  I agree to be contacted by Auribus Tech. My details will be used
+                  only for this purpose.
                 </label>
               </div>
 
+              {/* SUBMIT BUTTON WITH STATUS TEXT */}
               <button
-                type="button"
-                className="w-full inline-flex items-center justify-center rounded-full bg-sky-500 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-950 shadow-lg shadow-sky-500/40 hover:bg-sky-400 transition-colors"
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full inline-flex items-center justify-center rounded-full bg-sky-500 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-950 shadow-lg shadow-sky-500/40 hover:bg-sky-400 transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Submit request
+                {btnText}
               </button>
 
               <p className="text-[10px] text-slate-400">
                 Typical response time: 1–2 business days. You&apos;ll receive a
-                follow‑up email to schedule a conversation or request more
-                details.
+                follow-up email soon.
               </p>
             </form>
           </div>
@@ -183,14 +210,23 @@ export default function Contact() {
               <div className="space-y-1.5 text-slate-100">
                 <p>
                   📧 Email:{" "}
-                  <span className="text-sky-300">
+                  <a
+                    href="mailto:support@auribustech.com"
+                    className="hover:text-blue-500 transition"
+                  >
                     support@auribustech.com
-                  </span>
+                  </a>
                 </p>
                 <p>
                   📱 Phone:{" "}
-                  <span className="text-sky-300">+91-8149524655</span>
+                  <a
+                    href="tel:+918149524655"
+                    className="hover:text-blue-500 transition"
+                  >
+                    +91-8149524655
+                  </a>
                 </p>
+
                 <p>
                   💼 LinkedIn:{" "}
                   <a
@@ -204,8 +240,7 @@ export default function Contact() {
                 </p>
               </div>
               <p className="mt-3 text-[11px] text-slate-400">
-                Prefer email or LinkedIn? Reach out directly and briefly
-                describe your context—an architect or DevOps lead will respond
+                Prefer email or LinkedIn? Reach out directly—our team will respond
                 with next steps.
               </p>
             </div>
@@ -215,10 +250,10 @@ export default function Contact() {
                 What to expect
               </p>
               <ul className="space-y-1.5 text-slate-200">
-                <li>• A short intro call to understand your current state.</li>
-                <li>• A discussion of goals, constraints and timelines.</li>
-                <li>• Suggestions for 1–2 high‑impact starting points.</li>
-                <li>• Optional next step: assessment, PoC or project plan.</li>
+                <li>• A short intro call to understand your needs.</li>
+                <li>• A discussion of goals and timeline.</li>
+                <li>• Suggestions for the best starting point.</li>
+                <li>• Optional next steps: PoC or project plan.</li>
               </ul>
             </div>
 
@@ -227,11 +262,11 @@ export default function Contact() {
                 Ideal for teams that are
               </p>
               <ul className="space-y-1.5 text-slate-200">
-                <li>• Struggling with slow, manual deployments.</li>
-                <li>• Planning or in the middle of a cloud migration.</li>
-                <li>• Building or scaling containerized microservices.</li>
-                <li>• Preparing for SOC 2 / ISO 27001 or similar audits.</li>
-                <li>• Looking to standardize DevOps practices across teams.</li>
+                <li>• Struggling with slow deployments.</li>
+                <li>• Migrating to the cloud.</li>
+                <li>• Scaling microservices.</li>
+                <li>• Preparing for audits.</li>
+                <li>• Standardizing engineering workflows.</li>
               </ul>
             </div>
           </div>

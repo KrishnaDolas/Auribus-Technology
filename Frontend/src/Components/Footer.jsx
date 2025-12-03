@@ -26,8 +26,19 @@ export default function Footer() {
           {/* Right: contact + link */}
           <div className="flex flex-col items-start sm:items-end gap-2 text-[11px] text-slate-300">
             <div className="flex flex-col sm:items-end gap-0.5">
-              <span>📧 support@auribustech.com</span>
-              <span>📱 +91-8149524655</span>
+              <a
+                href="mailto:support@auribustech.com"
+                className="hover:text-blue-600 transition"
+              >
+                📧 support@auribustech.com
+              </a>
+
+              <a
+                href="tel:+918149524655"
+                className="hover:text-blue-600 transition"
+              >
+                📱 +91-8149524655
+              </a>
             </div>
             <a
               href="https://www.linkedin.com/in/auribus-solutions-673657268"

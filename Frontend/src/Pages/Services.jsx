@@ -1,5 +1,6 @@
 // src/Services.jsx
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 // Tech logo URLs
 const techLogos = {
@@ -479,7 +480,7 @@ export default function Services() {
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div className="rounded-2xl border border-slate-800 bg-slate-900/70 px-3 py-2">
               <div className="text-base sm:text-lg font-semibold text-sky-300">
-                120+
+                50+
               </div>
               <div className="text-[10px] sm:text-xs text-slate-400">
                 Projects delivered
@@ -488,7 +489,7 @@ export default function Services() {
 
             <div className="rounded-2xl border border-slate-800 bg-slate-900/70 px-3 py-2">
               <div className="text-base sm:text-lg font-semibold text-emerald-300">
-                7+
+                5+
               </div>
               <div className="text-[10px] sm:text-xs text-slate-400">
                 Years experience
@@ -704,7 +705,7 @@ export default function Services() {
                 more.
               </p>
               <p>
-                ✓ <strong>Proven delivery.</strong> 7+ years, 120+ successful
+                ✓ <strong>Proven delivery.</strong> 5+ years, 50+ successful
                 projects.
               </p>
               <p>
@@ -915,9 +916,14 @@ export default function Services() {
             Whether it's Cloud, DevOps, MERN, React Native, or WordPress — we
             deliver results.
           </p>
-          <button className="px-6 py-3 bg-sky-600 hover:bg-sky-500 rounded-xl font-semibold transition shadow-lg">
-            Contact Us
-          </button>
+           <Link to="/contact">
+    <button
+      className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 transition text-white font-medium flex items-center mx-auto gap-2"
+    >
+      Contact Us
+      <span>→</span>
+    </button>
+  </Link>
         </section>
       </div>
     </div>
