@@ -15,24 +15,15 @@ export default function Contact() {
         {/* Intro */}
         <section className="pt-2 md:pt-4 max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-sky-500/40 bg-sky-500/10 px-3 py-1 text-[11px] font-medium text-sky-100 mb-3">
-            Contact Auribus IT
+            Contact Auribus Tech
           </span>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-3">
-            Let&apos;s talk about your{" "}
+            Let&apos;s talk {" "}
             <span className="bg-gradient-to-r from-sky-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent">
-              DevOps & Cloud
+              about your
             </span>{" "}
             roadmap.
           </h1>
-          <p className="text-sm sm:text-base text-slate-300/90 mb-3">
-            Whether you&apos;re modernizing legacy infrastructure, scaling on
-            Kubernetes, preparing for audits or optimizing cloud costs, Auribus
-            IT can help define and deliver a clear, pragmatic path forward.
-          </p>
-          <p className="text-sm sm:text-base text-slate-300/90">
-            Share a bit about your context and objectives and the team will
-            follow up with concrete next steps—not a generic sales pitch.
-          </p>
         </section>
 
         {/* Main contact layout */}
@@ -94,14 +85,51 @@ export default function Contact() {
                   What do you need help with?
                 </label>
                 <select className="rounded-lg bg-slate-900 border border-slate-700 px-2.5 py-2 text-xs sm:text-sm text-slate-100 outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400">
-                  <option>CI/CD & Release Automation</option>
-                  <option>Cloud Migration & Infrastructure as Code</option>
-                  <option>Kubernetes & Microservices</option>
-                  <option>Security & Compliance Automation</option>
-                  <option>Monitoring & Observability</option>
-                  <option>DevOps Transformation & Training</option>
-                  <option>Other / Not sure yet</option>
-                </select>
+  <option value="">Select a service</option>
+
+  {/* DevOps & Cloud */}
+  <option>DevOps & Cloud Infrastructure</option>
+  <option>CI/CD & Release Automation</option>
+  <option>Cloud Migration & Infrastructure as Code</option>
+  <option>Kubernetes & Microservices</option>
+  <option>Monitoring & Observability</option>
+  <option>Security & Compliance Automation</option>
+  <option>DevOps Transformation & Training</option>
+
+  {/* Web & Mobile */}
+  <option>MERN Stack Web Applications</option>
+  <option>React Native Mobile Apps</option>
+  <option>REST APIs & Microservices Backend</option>
+  <option>Real-time Dashboards & SaaS Platforms</option>
+
+  {/* WordPress & Web */}
+  <option>WordPress Websites & CMS</option>
+  <option>WordPress E-commerce (WooCommerce)</option>
+  <option>Performance Optimization & CDN</option>
+  <option>SEO & Mobile-first Web Design</option>
+
+  {/* AI & Content */}
+  <option>AI Video & Content Creation</option>
+  <option>Social Media Content & Shorts</option>
+  <option>Brand Storytelling & Explainer Videos</option>
+
+  {/* Marketing */}
+  <option>Digital Marketing & Growth</option>
+  <option>Google Ads & Meta Ads Campaigns</option>
+  <option>SEO & Content Marketing</option>
+  <option>Lead Generation & Sales Funnels</option>
+
+  {/* ERP & Automation */}
+  <option>ERP & Business Process Automation</option>
+  <option>HRMS, CRM & Inventory Systems</option>
+  <option>Finance, Accounting & Reporting Workflows</option>
+
+  {/* General */}
+  <option>Consulting & Architecture Review</option>
+  <option>Managed Services & Support</option>
+  <option>Other / Not sure yet</option>
+</select>
+
               </div>
 
               <div className="flex flex-col gap-1">
@@ -125,7 +153,7 @@ export default function Contact() {
                   htmlFor="consent"
                   className="text-[11px] text-slate-300 leading-snug"
                 >
-                  I agree to be contacted by Auribus IT about DevOps & Cloud
+                  I agree to be contacted by Auribus Tech about DevOps & Cloud
                   consulting services. My details will be used only for this
                   purpose.
                 </label>
@@ -156,12 +184,12 @@ export default function Contact() {
                 <p>
                   📧 Email:{" "}
                   <span className="text-sky-300">
-                    contact@auribus-it.com
+                    support@auribustech.com
                   </span>
                 </p>
                 <p>
                   📱 Phone:{" "}
-                  <span className="text-sky-300">+91-XXXXXXXXXX</span>
+                  <span className="text-sky-300">+91-8149524655</span>
                 </p>
                 <p>
                   💼 LinkedIn:{" "}
@@ -171,7 +199,7 @@ export default function Contact() {
                     rel="noreferrer"
                     className="text-sky-300 underline underline-offset-2"
                   >
-                    Auribus Solutions Profile
+                    Auribus Tech Solutions Profile
                   </a>
                 </p>
               </div>

@@ -1,5 +1,6 @@
 // src/AboutUs.jsx
 import React from "react";
+import aboutHero from "../Assets/about1.webp";
 
 const coreValues = [
   { icon: "⚡", title: "Excellence", description: "High‑quality, reliable solutions" },
@@ -9,48 +10,10 @@ const coreValues = [
   { icon: "📈", title: "Growth", description: "Continuous learning & capability" },
 ];
 
-const teamAreas = [
-  {
-    icon: "🔧",
-    area: "MERN Stack Development",
-    stat: "40+ web applications built",
-    software: "Real-time dashboards, e-commerce platforms, SaaS solutions"
-  },
-  {
-    icon: "📱",
-    area: "React Native Mobile Apps",
-    stat: "30+ cross-platform apps",
-    software: "iOS/Android apps, social networks, marketplace solutions"
-  },
-  {
-    icon: "🌐",
-    area: "WordPress & CMS Solutions",
-    stat: "50+ websites deployed",
-    software: "Corporate sites, blogs, content management systems"
-  },
-  {
-    icon: "🔧",
-    area: "DevOps Engineering",
-    stat: "50+ Azure implementations",
-    software: "CI/CD automation, release pipelines, GitOps workflows"
-  },
-  {
-    icon: "📦",
-    area: "Kubernetes & Containers",
-    stat: "1000+ containers orchestrated",
-    software: "Microservices platforms, scalable deployments, auto-healing"
-  },
-  {
-    icon: "☁️",
-    area: "Cloud Architecture",
-    stat: "$50M+ infrastructure designed",
-    software: "Multi-cloud solutions, disaster recovery, compliance"
-  },
-];
-
 const testimonials = [
   {
-    quote: "Built a complete e-commerce platform with MERN. Fast delivery, great architecture.",
+    quote:
+      "Built a complete e-commerce platform with MERN. Fast delivery, great architecture.",
     role: "E-Commerce Founder",
   },
   {
@@ -79,18 +42,14 @@ export default function AboutUs() {
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/40 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-200 mb-3">
               <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-              About Auribus IT
+              About Auribus Tech
             </span>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-3">
-              Full-stack development &{" "}
+              5+ years building modern web, mobile apps &{" "}
               <span className="bg-gradient-to-r from-sky-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent">
-                cloud infrastructure partner.
+                delivering high-quality software solutions.
               </span>
             </h1>
-            <p className="text-sm sm:text-base text-slate-300/90 mb-4">
-              7+ years building modern web & mobile apps, managing cloud platforms
-              and delivering enterprise DevOps solutions for startups and Fortune 500s.
-            </p>
             <ul className="space-y-1.5 text-sm text-slate-200">
               <li className="flex gap-2">
                 <span>✓</span> MERN, React Native & WordPress expertise
@@ -104,27 +63,28 @@ export default function AboutUs() {
             </ul>
           </div>
 
-          {/* Mission / Vision card */}
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-tr from-sky-500 via-indigo-500 to-emerald-400 opacity-40 blur-2xl rounded-3xl" />
-            <div className="relative rounded-3xl border border-slate-700/80 bg-slate-900/85 backdrop-blur-xl p-5 sm:p-6 shadow-2xl space-y-3 text-sm">
-              <div>
-                <p className="text-xs uppercase tracking-widest text-slate-400 mb-1">
-                  Mission
-                </p>
-                <p className="text-slate-100">
-                  Deliver scalable, secure applications and DevOps platforms that
-                  accelerate growth, reduce costs and unlock innovation.
-                </p>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-widest text-slate-400 mb-1">
-                  Vision
-                </p>
-                <p className="text-slate-100">
-                  Be the trusted partner for organizations transforming their
-                  digital products and cloud infrastructure.
-                </p>
+          {/* Animated hero image */}
+          <div className="relative group">
+            {/* Outer glow */}
+            <div className="absolute -inset-1 bg-gradient-to-tr from-sky-500 via-indigo-500 to-emerald-400 opacity-40 blur-2xl rounded-3xl transition-opacity duration-500 group-hover:opacity-70" />
+            {/* Image card */}
+            <div className="relative rounded-3xl overflow-hidden border border-slate-700/80 bg-slate-900/80 shadow-2xl transform transition-transform duration-700 group-hover:-translate-y-1 group-hover:scale-[1.02]">
+              {/* Top gradient overlay */}
+              <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-sky-500/25 via-transparent to-transparent pointer-events-none" />
+              {/* Bottom overlay */}
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none" />
+
+              <img
+                src={aboutHero}
+                alt="Auribus Tech team collaborating on modern web, mobile and cloud solutions"
+                className="w-full h-full object-cover animate-[floatUpDown_10s_ease-in-out_infinite]"
+                loading="lazy"
+              />
+
+              {/* Caption badge */}
+              <div className="absolute left-4 bottom-4 rounded-full bg-slate-950/80 border border-sky-500/50 px-3 py-1 text-[11px] text-slate-100 flex items-center gap-2">
+                <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
+                Auribus Tech · In action
               </div>
             </div>
           </div>
@@ -151,62 +111,32 @@ export default function AboutUs() {
           </div>
         </section>
 
-        {/* What We Do */}
-        <section className="mt-14 md:mt-16">
-          <div className="mb-5">
-            <h2 className="text-xl sm:text-2xl font-semibold">
-              What we deliver
-            </h2>
-            <p className="text-sm text-slate-300 mt-1 max-w-2xl">
-              Complete solutions across web development, mobile apps, WordPress,
-              cloud infrastructure and DevOps automation.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {teamAreas.map((item) => (
-              <div
-                key={item.area}
-                className="rounded-2xl border border-slate-800 bg-slate-950/80 p-4 hover:border-emerald-500/40 transition-colors"
-              >
-                <div className="text-2xl mb-2">{item.icon}</div>
-                <p className="text-sm font-semibold text-slate-100 mb-1">
-                  {item.area}
-                </p>
-                <p className="text-xs text-slate-400 mb-2">{item.stat}</p>
-                <p className="text-xs text-slate-300 border-t border-slate-700 pt-2">
-                  {item.software}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* Why Choose Us */}
         <section className="mt-14 md:mt-16 grid md:grid-cols-2 gap-8">
           <div>
             <h2 className="text-xl sm:text-2xl font-semibold mb-3">
-              Why choose Auribus IT?
+              Why choose Auribus Tech?
             </h2>
             <div className="space-y-2 text-sm text-slate-300">
               <p>
-                • <strong>Full-stack capability:</strong> From frontend UI to backend
-                APIs to cloud deployment—one trusted partner.
+                • <strong>Full-stack capability:</strong> From frontend UI to
+                backend APIs to cloud deployment—one trusted partner.
               </p>
               <p>
-                • <strong>Modern tech stack:</strong> MERN, React Native, WordPress,
-                Kubernetes, DevOps automation.
+                • <strong>Modern tech stack:</strong> MERN, React Native,
+                WordPress, Kubernetes, DevOps automation.
               </p>
               <p>
-                • <strong>Proven delivery:</strong> 7+ years, 120+ projects, trusted by
-                enterprises and startups.
+                • <strong>Proven delivery:</strong> 7+ years, 120+ projects,
+                trusted by enterprises and startups.
               </p>
               <p>
-                • <strong>Scalable solutions:</strong> Built for growth with security,
-                performance and cost-efficiency.
+                • <strong>Scalable solutions:</strong> Built for growth with
+                security, performance and cost-efficiency.
               </p>
               <p>
-                • <strong>Knowledge transfer:</strong> Your teams own and evolve the
-                platform long‑term.
+                • <strong>Knowledge transfer:</strong> Your teams own and evolve
+                the platform long‑term.
               </p>
             </div>
           </div>
@@ -217,20 +147,20 @@ export default function AboutUs() {
             </p>
             <div className="space-y-2 text-sm text-slate-100">
               <p>
-                <span className="text-emerald-400 font-semibold">40+</span> MERN web
-                apps live in production
+                <span className="text-emerald-400 font-semibold">40+</span> MERN
+                web apps live in production
               </p>
               <p>
-                <span className="text-sky-400 font-semibold">30+</span> React Native
-                apps on iOS & Android
+                <span className="text-sky-400 font-semibold">30+</span> React
+                Native apps on iOS & Android
               </p>
               <p>
-                <span className="text-indigo-400 font-semibold">50+</span> WordPress
-                sites deployed
+                <span className="text-indigo-400 font-semibold">50+</span>{" "}
+                WordPress sites deployed
               </p>
               <p>
-                <span className="text-amber-400 font-semibold">99.9%</span> platform
-                uptime & reliability
+                <span className="text-amber-400 font-semibold">99.9%</span>{" "}
+                platform uptime & reliability
               </p>
             </div>
           </div>
@@ -260,8 +190,8 @@ export default function AboutUs() {
             Let's build or transform your platform
           </h2>
           <p className="text-sm text-slate-200 mb-4 max-w-2xl mx-auto">
-            Whether you need a web app, mobile solution, WordPress site or complete
-            cloud infrastructure—let's talk about your vision.
+            Whether you need a web app, mobile solution, WordPress site or
+            complete cloud infrastructure—let's talk about your vision.
           </p>
           <div className="flex flex-wrap justify-center gap-3 text-xs sm:text-sm text-slate-100">
             <a

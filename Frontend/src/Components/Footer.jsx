@@ -14,11 +14,11 @@ export default function Footer() {
             </div>
             <div>
               <p className="text-[11px] font-semibold text-slate-100">
-                Auribus IT · DevOps & Cloud Infrastructure
+                Auribus Tech
               </p>
               <p className="text-[11px] text-slate-400">
-                CI/CD, Kubernetes, Infrastructure as Code, security & observability
-                for modern enterprises.
+                {/* CI/CD, Kubernetes, Infrastructure as Code, security & observability
+                for modern enterprises. */}
               </p>
             </div>
           </div>
@@ -26,8 +26,8 @@ export default function Footer() {
           {/* Right: contact + link */}
           <div className="flex flex-col items-start sm:items-end gap-2 text-[11px] text-slate-300">
             <div className="flex flex-col sm:items-end gap-0.5">
-              <span>📧 contact@auribus-it.com</span>
-              <span>📱 +91-XXXXXXXXXX</span>
+              <span>📧 support@auribustech.com</span>
+              <span>📱 +91-8149524655</span>
             </div>
             <a
               href="https://www.linkedin.com/in/auribus-solutions-673657268"
@@ -46,13 +46,13 @@ export default function Footer() {
             <Link to="/" className="hover:text-sky-300">
               Home
             </Link>
-            <Link to="/about" className="hover:text-sky-300">
-              About
-            </Link>
             <Link to="/services" className="hover:text-sky-300">
               Services
             </Link>
-            <Link to="/SuccessStories" className="hover:text-sky-300">
+            <Link to="/about" className="hover:text-sky-300">
+              About Us
+            </Link>
+            {/* <Link to="/SuccessStories" className="hover:text-sky-300">
               Success Stories
             </Link>
             <Link to="/TechnologyStack" className="hover:text-sky-300">
@@ -60,9 +60,9 @@ export default function Footer() {
             </Link>
             <Link to="/solutions" className="hover:text-sky-300">
               Solutions
-            </Link>
+            </Link> */}
             <Link to="/Contact" className="hover:text-sky-300">
-              Contact
+              Contact Us
             </Link>
           </div>
           <p className="text-slate-500">

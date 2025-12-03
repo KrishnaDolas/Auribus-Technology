@@ -1,18 +1,19 @@
 // src/Home.js
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaRocket, FaCloud, FaShieldAlt, FaTools } from "react-icons/fa";
 
 const coreHighlights = [
   "DevOps consulting & implementation",
-  "MERN Stack ,React.js ,Node.js Web Applications",
+  "MERN Stack, React.js, Node.js Web Applications",
   "React Native Mobile Apps",
   "Cloud infrastructure on Azure, AWS, GCP",
   "CI/CD pipelines & automation",
   "Kubernetes & container platforms",
   "Security, monitoring & reliability",
   "WordPress websites & CMS",
+  "Digital Marketing & SEO Services",
 ];
-
 
 const techLogos = [
   { name: "Azure", logo: "/logos/azure.svg" },
@@ -70,9 +71,9 @@ const logoRows = [
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
     },
     {
-  name: "Express",
-  logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg",
-},
+      name: "Express",
+      logo: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg",
+    },
     {
       name: "MongoDB",
       logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
@@ -96,18 +97,14 @@ const logoRows = [
   ],
 ];
 
-
-
 function LogoMarqueeRow({ logos, reverse }) {
   return (
     <div className="relative overflow-hidden py-4">
-      {/* Track wrapper */}
       <div
         className={`flex gap-8 min-w-max ${
           reverse ? "marquee-row-reverse" : "marquee-row"
         }`}
       >
-        {/* First copy */}
         {logos.map((logo) => (
           <div
             key={logo.name + "-1"}
@@ -123,7 +120,6 @@ function LogoMarqueeRow({ logos, reverse }) {
             </span>
           </div>
         ))}
-        {/* Second copy for seamless loop */}
         {logos.map((logo) => (
           <div
             key={logo.name + "-2"}
@@ -144,6 +140,7 @@ function LogoMarqueeRow({ logos, reverse }) {
   );
 }
 
+// you can remove Fa* icons if not needed later
 export default function Home() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-50">
@@ -161,21 +158,15 @@ export default function Home() {
             <div>
               <span className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-200 mb-3">
                 <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-                Auribus IT · DevOps & Cloud
+                Auribus Tech · DevOps & Cloud
               </span>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight mb-3">
-                We design, build and run{" "}
+                Auribus Tech helps teams ship faster{" "}
                 <span className="bg-gradient-to-r from-sky-400 via-indigo-400 to-emerald-400 bg-clip-text text-transparent">
-                  modern DevOps & cloud platforms
+                  stay secure, and keep cloud systems reliable.
                 </span>
-                .
               </h1>
-
-              <p className="text-sm sm:text-base text-slate-300/90 mb-5 max-w-xl">
-                Auribus IT helps teams ship faster, stay secure and keep cloud
-                systems reliable with practical DevOps and cloud infrastructure services.
-              </p>
 
               <div className="flex flex-wrap items-center gap-3 mb-6">
                 <a
@@ -217,42 +208,29 @@ export default function Home() {
 
                 <div className="grid grid-cols-3 gap-3 text-xs text-slate-200">
                   <div className="rounded-2xl bg-slate-950/60 border border-slate-700 px-3 py-3">
-                    <div className="text-lg font-semibold text-sky-300">7+</div>
+                    <div className="text-lg font-semibold text-sky-300">5+</div>
                     <div className="mt-0.5 text-slate-400">years in DevOps</div>
                   </div>
                   <div className="rounded-2xl bg-slate-950/60 border border-slate-700 px-3 py-3">
                     <div className="text-lg font-semibold text-emerald-300">
                       50+
                     </div>
-                    <div className="mt-0.5 text-slate-400">enterprise projects</div>
+                    <div className="mt-0.5 text-slate-400">
+                      enterprise projects
+                    </div>
                   </div>
                   <div className="rounded-2xl bg-slate-950/60 border border-slate-700 px-3 py-3">
                     <div className="text-lg font-semibold text-indigo-300">
                       99.9%
                     </div>
-                    <div className="mt-0.5 text-slate-400">reliable releases</div>
+                    <div className="mt-0.5 text-slate-400">
+                      reliable releases
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-
-          {/* Tech logos */}
-          {/* Logo carousel */}
-        <section className="mt-10 space-y-4">
-          <p className="text-xs sm:text-sm text-slate-400 mb-1">
-            Hover on the rows to pause and inspect individual technologies.
-          </p>
-          <div className="rounded-3xl border border-slate-800 bg-slate-950/80 p-4 sm:p-5">
-            <LogoMarqueeRow logos={logoRows[0]} speedClass="animate-marquee-slow" />
-            <div className="mt-1 border-t border-slate-800/70" />
-            <LogoMarqueeRow
-              logos={logoRows[1]}
-              speedClass="animate-marquee-slow"
-              reverse
-            />
-          </div>
-        </section>
 
           {/* Contact strip */}
           <section
@@ -262,10 +240,12 @@ export default function Home() {
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div>
                 <h2 className="text-lg sm:text-xl font-semibold mb-1">
-                  Ready to Create Your Own HRMS , CRM or Employee Management System ?
+                  Ready to Create Your Own HRMS , CRM or Employee Management
+                  System ?
                 </h2>
                 <p className="text-sm text-slate-100">
-                  Share a few details and the Auribus IT team will get back to you.
+                  Share a few details and the Auribus Tech team will get back to
+                  you.
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 text-xs text-slate-100">
@@ -283,135 +263,37 @@ export default function Home() {
             </div>
           </section>
 
-            {/* Contact / CTA */}
-          <section
-            id="contact"
-            className="mt-16 md:mt-20 rounded-3xl border border-sky-500/50 bg-gradient-to-r from-sky-500/15 via-slate-900 to-indigo-500/15 p-5 sm:p-7 shadow-[0_20px_60px_rgba(56,189,248,0.28)]"
-          >
-            <div className="grid md:grid-cols-[1.2fr_1fr] gap-8 items-start">
-              <div>
-                <h2 className="text-xl sm:text-2xl font-semibold mb-2">
-                  Let’s accelerate your DevOps journey
-                </h2>
-                <p className="text-sm text-slate-100 mb-4 max-w-xl">
-                  Whether you&apos;re modernizing legacy infrastructure, scaling
-                  Kubernetes, hardening security or optimizing cloud costs, Auribus
-                  IT has the experience to deliver measurable, repeatable results.
-                </p>
-                <div className="space-y-1 text-xs text-slate-100">
-                  <p>
-                    📧 Email:{" "}
-                    <span className="text-sky-200">contact@auribus-it.com</span>
-                  </p>
-                  <p>
-                    📱 Phone: <span className="text-sky-200">+91-XXXXXXXXXX</span>
-                  </p>
-                  <p>
-                    💼 LinkedIn:{" "}
-                    <a
-                      href="https://www.linkedin.com/in/auribus-solutions-673657268"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="text-sky-200 underline underline-offset-2"
-                    >
-                      Auribus Solutions Profile
-                    </a>
-                  </p>
-                </div>
-              </div>
+          {/* NEW DevOps accelerator value snapshot USING YOUR SERVICE LIST */}
+          <section className="w-full flex justify-center mt-20 px-4">
+  <div
+    className="max-w-5xl w-full rounded-[40px] p-10 text-center border-[3px]"
+    style={{
+      borderImage:
+        "linear-gradient(90deg, #2dd4bf, #3b82f6, #6366f1) 1",
+    }}
+  >
+    <p className="text-xl md:text-2xl font-medium text-slate-200 leading-relaxed">
+      Put our full stack development experience of solving the challenges of
+      <br />
+      <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400 font-semibold">
+        FinTech, eCommerce, Healthcare, Aviation,
+      </span>{" "}
+      and 20+ other industries to your benefit
+    </p>
 
+    <div className="mt-6">
+      <button
+        className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 transition text-white font-medium flex items-center mx-auto gap-2"
+      >
+        Talk to Our Experts
+        <span>→</span>
+      </button>
+    </div>
+  </div>
+</section>
 
-              <form className="space-y-3 bg-slate-950/60 border border-slate-800 rounded-2xl p-4">
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="flex flex-col gap-1">
-                    <label className="text-[11px] text-slate-300">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      className="rounded-lg bg-slate-900 border border-slate-700 px-2.5 py-1.5 text-xs text-slate-100 outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
-                      placeholder="Your full name"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <label className="text-[11px] text-slate-300">
-                      Company
-                    </label>
-                    <input
-                      type="text"
-                      className="rounded-lg bg-slate-900 border border-slate-700 px-2.5 py-1.5 text-xs text-slate-100 outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
-                      placeholder="Organization name"
-                    />
-                  </div>
-                </div>
-
-
-                <div className="grid grid-cols-2 gap-3">
-                  <div className="flex flex-col gap-1">
-                    <label className="text-[11px] text-slate-300">
-                      Work email
-                    </label>
-                    <input
-                      type="email"
-                      className="rounded-lg bg-slate-900 border border-slate-700 px-2.5 py-1.5 text-xs text-slate-100 outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
-                      placeholder="you@company.com"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-1">
-                    <label className="text-[11px] text-slate-300">
-                      Phone
-                    </label>
-                    <input
-                      type="tel"
-                      className="rounded-lg bg-slate-900 border border-slate-700 px-2.5 py-1.5 text-xs text-slate-100 outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400"
-                      placeholder="+91-XXXXXXXXXX"
-                    />
-                  </div>
-                </div>
-
-
-                <div className="flex flex-col gap-1">
-                  <label className="text-[11px] text-slate-300">
-                    What do you need help with?
-                  </label>
-                  <select className="rounded-lg bg-slate-900 border border-slate-700 px-2.5 py-1.5 text-xs text-slate-100 outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400">
-                    <option>CI/CD & Release Automation</option>
-                    <option>Cloud Migration & IaC</option>
-                    <option>Kubernetes & Microservices</option>
-                    <option>Security & Compliance Automation</option>
-                    <option>Monitoring & Observability</option>
-                    <option>DevOps Transformation & Training</option>
-                  </select>
-                </div>
-
-
-                <div className="flex flex-col gap-1">
-                  <label className="text-[11px] text-slate-300">
-                    Briefly describe your current challenges
-                  </label>
-                  <textarea
-                    rows={3}
-                    className="rounded-lg bg-slate-900 border border-slate-700 px-2.5 py-1.5 text-xs text-slate-100 outline-none focus:border-sky-400 focus:ring-1 focus:ring-sky-400 resize-none"
-                    placeholder="e.g., long release cycles, frequent deployment failures, high cloud costs..."
-                  />
-                </div>
-
-
-                <button
-                  type="button"
-                  className="w-full inline-flex items-center justify-center rounded-full bg-sky-500 px-4 py-2.5 text-xs font-semibold text-slate-950 shadow-lg shadow-sky-500/40 hover:bg-sky-400 transition-colors"
-                >
-                  Submit request
-                </button>
-                <p className="text-[10px] text-slate-400">
-                  By submitting, you agree to be contacted about DevOps & Cloud
-                  consulting services from Auribus IT.
-                </p>
-              </form>
-            </div>
-          </section>
-        </main>
-      </div>
-    </div>
-  );
+        </main>
+      </div>
+    </div>
+  );
 }

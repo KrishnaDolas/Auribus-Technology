@@ -20,10 +20,10 @@ export default function Header() {
               </div>
               <div>
                 <div className="text-[11px] sm:text-sm font-semibold tracking-[0.2em] uppercase text-slate-300">
-                  Auribus IT
+                  Auribus Tech
                 </div>
                 <div className="text-[10px] text-slate-500">
-                  DevOps & Cloud Infrastructure
+                  {/* DevOps & Cloud Infrastructure */}
                 </div>
               </div>
             </Link>
@@ -34,18 +34,18 @@ export default function Header() {
                 Home
               </NavLink>
               <NavLink
-                to="/about"
-                className={({ isActive }) => (isActive ? active : base)}
-              >
-                About
-              </NavLink>
-              <NavLink
                 to="/services"
                 className={({ isActive }) => (isActive ? active : base)}
               >
                 Services
               </NavLink>
               <NavLink
+                to="/about"
+                className={({ isActive }) => (isActive ? active : base)}
+              >
+                About Us
+              </NavLink>
+              {/* <NavLink
                 to="/success-stories"
                 className={({ isActive }) => (isActive ? active : base)}
               >
@@ -56,19 +56,19 @@ export default function Header() {
                 className={({ isActive }) => (isActive ? active : base)}
               >
                 Technology Stack
-              </NavLink>
-              <NavLink
+              </NavLink> */}
+              {/* <NavLink
                 to="/solutions"
                 className={({ isActive }) => (isActive ? active : base)}
               >
                 Solutions
-              </NavLink>
+              </NavLink> */}
 
               <Link
                 to="/Contact"
                 className="ml-2 inline-flex items-center rounded-full border border-sky-500 bg-sky-500/10 px-4 py-1.5 text-[11px] font-semibold text-sky-100 hover:bg-sky-500/20 hover:border-sky-400 transition-colors shadow-sm shadow-sky-500/30"
               >
-                Schedule a Call
+                Contact Us
               </Link>
             </nav>
 
